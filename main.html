@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clever House</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+ <body>
+
+   <div class="wrapper">
+
+    <div class="header">
+        <div class="inner-header">
+          <ul class="menu-main">
+            <li><p class="p-inHeader"><span></span> Коридор</p></li>
+            <li><p class="p-inHeader">Кухня</p></li>
+            <li><p class="p-inHeader">Спальня</p></li>
+            <li><p  class="p-inHeader">Ванна</></li>
+          </ul>
+        </div>
+    </div>
+    <div class="row" >
+      <div class="sidebar">
+          <div class="inner-sidebar">
+            <div id="light-inSidebar">
+            Світло
+          </div>
+
+            <select class="select-css">
+              <option>Виключене</option>
+              <option>Включене</option>
+            </select>
+            <div id="louver-inSidebar">
+              Жалюзі
+            </div>
+
+
+            <select class="select-css">
+              <option>Закриті</option>
+              <option>Відкриті</option>
+            </select>
+            <div id="signaling-inSidebar">
+              Сигналізація
+            </div>
+
+
+            <select class="select-css">
+              <option>Виключена</option>
+              <option>Включена</option>
+            </select>
+
+
+          </div>
+
+      </div>
+      <div class="content">
+        <div class="inner-content">
+
+          <div class="inner-light">
+
+                <label class="switch">
+                <input type="checkbox" id="on">
+                <span class="slider round"></span>
+              </label>
+
+              
+
+            <div class=container4>
+              <h1 id="light">Світло
+              </div>
+
+
+          </div>
+
+          <div class="inner-louver">
+
+            <div class="container6">
+              <button  id="louver-open">Відкрити</button>
+            </div>
+
+              <div class=container3>
+                <h1 id="louver">Жалюзі
+                </div>
+
+                <div class="container6">
+                  <button id="louver-close">Закрити</button>
+                </div>
+          </div>
+
+            <div class="inner-signaling" id="divtoBlink">
+                <div class="container5">
+                  <button id="signaling-on">Включити</button>
+                </div>
+
+
+                <div class=container2>
+                  <h1 id="signaling">Сигналізація
+                  </div>
+
+                  <div class="container5">
+                    <button id="signaling-off">Виключити</button>
+                  </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+   </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
