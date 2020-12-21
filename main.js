@@ -184,3 +184,153 @@ selectSignaling[2].addEventListener('change',function () {
   }
 },
   false)
+
+
+// TV on-off
+let tvOn = document.getElementById('TV-on')
+
+tvOn.addEventListener('click',() => {
+	let p = document.getElementById("p");
+	p.style.display = 'block';
+	p.style.color = '#284bfa';
+	let div = document.getElementById('tv')
+	div.setAttribute('style','color: blue;')
+	let selectTv = document.getElementsByClassName('select-css')
+	selectTv[3].value = 'Включений';
+	let tvInSidebar = document.getElementById('tv-inSidebar')
+	tvInSidebar.style.color = 'blue';
+	let container = document.getElementsByClassName('additionall-component')
+	container[0].setAttribute('style', 'background-image:url(SMPTE_Color_Bars.svg.png)')
+})
+
+let tvOff = document.getElementById('TV-off')
+
+tvOff.addEventListener('click',() => {
+	let p = document.getElementById("p");
+	p.style.display = 'none';
+	let div = document.getElementById('tv')
+	div.setAttribute('style','color:#A9A9A9;')
+	let selectTv = document.getElementsByClassName('select-css')
+	selectTv[3].value = 'Виключений';
+	let tvInSidebar = document.getElementById('tv-inSidebar')
+	tvInSidebar.style.color = '#A9A9A9';
+	let container = document.getElementsByClassName('additionall-component')
+	container[0].setAttribute('style', 'background:black')
+})
+
+let selectTV = document.getElementsByClassName('select-css');
+
+if (selectTV[3].options[selectTV[3].selectedIndex].value == "Виключений") {
+	let p = document.getElementById("p");
+	p.style.display = 'none';
+}
+
+selectTV[3].addEventListener('change',function () {
+	if (selectTV[3].options[selectTV[3].selectedIndex].value == "Включений") {
+		let p = document.getElementById("p");
+		p.style.display = 'block';
+		let div = document.getElementById('tv')
+		div.setAttribute('style','color: blue;')
+		let tvInSidebar = document.getElementById('tv-inSidebar')
+		tvInSidebar.style.color = 'blue';
+		let container = document.getElementsByClassName('additionall-component')
+		container[0].setAttribute('style', 'background-image:url(SMPTE_Color_Bars.svg.png)')
+	} else if (selectTV[3].options[selectTV[3].selectedIndex].value == "Виключений") {
+		let p = document.getElementById("p");
+		p.style.display = 'none';
+		let div = document.getElementById('tv');
+		div.setAttribute('style','color:#A9A9A9;');
+		let tvInSidebar = document.getElementById('tv-inSidebar');
+		tvInSidebar.style.color = '#A9A9A9';
+		let container = document.getElementsByClassName('additionall-component');
+		container[0].setAttribute('style', 'background:black');
+	 }
+},false);
+
+
+let selectOfChannel = document.getElementById("channel");
+
+selectOfChannel.addEventListener('change',function () {
+	let p = document.getElementById("p");
+	if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "int") {
+		p.innerHTML = `${
+        selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+      }`;
+	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "nv") {
+		 p.innerHTML = `${
+         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+       }`;
+	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "onepls") {
+		 p.innerHTML = `${
+         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+       }`;
+	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "tet") {
+		 p.innerHTML = `${
+         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+       }`;
+	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "ukr") {
+		 p.innerHTML = `${
+         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+       }`;
+	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "choose") {
+		 p.innerHTML = `${
+         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+       }`;
+	 }
+},false)
+
+
+let butDeleteElm = document.getElementById('delete-elm');
+
+butDeleteElm.addEventListener('click',() => {
+	let input = document.getElementById('elm-todelete');
+
+	if (input.value == 'Світло') {
+		let light = document.getElementsByClassName('inner-light');
+		light[0].style.display = 'none';
+	} else if (input.value == 'Сигналізація') {
+		let signaling = document.getElementsByClassName('inner-signaling');
+		signaling[0].style.display = 'none';
+	} else if (input.value == 'Жалюзі') {
+		let louver = document.getElementsByClassName('inner-louver');
+		louver[0].style.display = 'none';
+	} else if (input.value == 'Телевізор') {
+		let tv = document.getElementsByClassName('additionall-component');
+		tv[0].style.display = 'none';
+	} else {
+		alert("ne sus")
+	}
+})
+
+let butAddElm = document.getElementById('add-elm')
+
+butAddElm.addEventListener('click',() => {
+	let input = document.getElementById('elm-toAdd');
+	let divTv = document.getElementsByClassName('additionall-component')
+	let selectSide = document.getElementsByClassName('select-css')
+	let str = `  <div class="inner-newComponent">
+				<div class="container20">
+					<button id="signaling-on">Включити</button>
+				</div>
+
+
+				<div class=container13>
+					<h1 id="newComp">${input.value}
+					</div>
+
+					<div class="container20">
+						<button id="signaling-off">Виключити</button>
+					</div>
+		</div>`
+let str2 = `<div id="newComponent-inSidebar">
+	${input.value}
+</div>
+
+
+<select class="select-css">
+	<option>Виключений</option>
+	<option>Включений</option>
+</select>`
+		selectSide[3].insertAdjacentHTML('afterend',`${str2}`)
+		divTv[0].insertAdjacentHTML('afterend',`${str}`)
+})
