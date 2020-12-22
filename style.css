@@ -26,7 +26,7 @@ body {
 }
 
 .inner-header {
-  background-image: url(paralaxnev2-540x200.png);
+  background-image: url(chernyy_linii_fon_pyatna_69524_300x120.jpg);
   height: 100px;
 }
 
@@ -273,6 +273,10 @@ div.container4 h1 {
   color: #A9A9A9;
 }
 
+
+
+
+
 .select-css {
 display: block;
 font-size: 16px;
@@ -502,6 +506,26 @@ div.d5 button:hover::after {
   left: -20%;
 }
 
+div.d5 input  {
+	width: 300px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
+  padding-bottom: 5px\0;
+}
+
+div.d4 input  {
+	width: 300px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
+  padding-bottom: 5px\0;
+}
+
 div.d4 button {
   position: relative;
 	padding: 15px 30px;
@@ -618,6 +642,9 @@ div.container20 button:hover:after{
        background: #F00;
    }
 
+.backgroundBlack {
+  background: black;
+}
 
    @import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
 .menu-main {
@@ -663,14 +690,7 @@ div.container20 button:hover:after{
   opacity: 0;
   transition: .5s ease-in-out;
 }
-/* .menu-main a:before {left: 5px;}
-.menu-main a:after {right: 5px;}
-.menu-main a.current:before,
-.menu-main a.current:after,
-.menu-main a:hover:before,
-.menu-main a:hover:after {opacity: 1;}
-.menu-main a.current,
-.menu-main a:hover {color: #F58262;} */
+
 @media(max-width:680px) {
   .menu-main li {display: block;}
 }

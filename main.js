@@ -6,6 +6,7 @@ $('select').change(function(){
 });
 
 
+
 let checkbox = document.getElementById('on');
 
 checkbox.addEventListener('click',() => {
@@ -38,93 +39,155 @@ checkbox.addEventListener('click',() => {
   }
 })
 
-let selectLight = document.getElementsByClassName('select-css')
-selectLight[0].addEventListener('change',function () {
-			if (selectLight[0].options[selectLight[0].selectedIndex].value == "Включене") {
-				let pInHeader = document.getElementsByClassName('p-inHeader')
-				for (let i = 0; i < pInHeader.length; i++) {
-					pInHeader[i].style.color = 'yellow'
-				}
-				let lightInSidebar = document.getElementById('light-inSidebar')
-				lightInSidebar.style.color = 'yellow';
-				let container4 = document.getElementsByClassName('inner-light')
-				container4[0].style.background = '#FFD700';
-				let div = document.getElementById('light')
-				div.setAttribute('style','color: yellow;')
-			} else if (selectLight[0].options[selectLight[0].selectedIndex].value == "Виключене") {
-				let pInHeader = document.getElementsByClassName('p-inHeader')
-				for (let i = 0; i < pInHeader.length; i++) {
-					pInHeader[i].style.color = 'grey'
-				}
-				let lightInSidebar = document.getElementById('light-inSidebar')
-				lightInSidebar.style.color = '#A9A9A9';
-				let container4 = document.getElementsByClassName('inner-light')
-				container4[0].style.background = 'black';
-				let div = document.getElementById('light')
-				div.setAttribute('style','color: #A9A9A9')
-			}
+
+
+// selectLight in sidebar off-on
+
+let selectLight = document.getElementsByClassName("select-css");
+selectLight[0].addEventListener(
+  "change",
+  function () {
+    if (
+      selectLight[0].options[selectLight[0].selectedIndex].value == "Включене"
+    ) {
+      let pInHeader = document.getElementsByClassName("p-inHeader");
+      for (let i = 0; i < pInHeader.length; i++) {
+        pInHeader[i].style.color = "yellow";
+      }
+      let lightInSidebar = document.getElementById("light-inSidebar");
+      lightInSidebar.style.color = "yellow";
+      let container4 = document.getElementsByClassName("inner-light");
+      container4[0].style.background = "#FFD700";
+      let div = document.getElementById("light");
+      div.setAttribute("style", "color: yellow;");
+    } else if (
+      selectLight[0].options[selectLight[0].selectedIndex].value == "Виключене"
+    ) {
+      let pInHeader = document.getElementsByClassName("p-inHeader");
+      for (let i = 0; i < pInHeader.length; i++) {
+        pInHeader[i].style.color = "grey";
+      }
+      let lightInSidebar = document.getElementById("light-inSidebar");
+      lightInSidebar.style.color = "#A9A9A9";
+      let container4 = document.getElementsByClassName("inner-light");
+      container4[0].style.background = "black";
+      let div = document.getElementById("light");
+      div.setAttribute("style", "color: #A9A9A9");
+    }
   },
-  false)
+  false
+);
 
-let louver = document.getElementById('louver-open')
+// Open-Close Button louver
 
-louver.addEventListener('click', () => {
-	let pInHeader = document.getElementsByClassName('p-inHeader')
-	for (let i = 0; i < pInHeader.length; i++) {
-		pInHeader[i].style.color = 'gold'
-	}
-	let louverInSidebar = document.getElementById('louver-inSidebar')
-	louverInSidebar.style.color = 'gold';
-	let selectLouver = document.getElementsByClassName('select-css')
-	selectLouver[1].value = 'Відкриті';
-	let container = document.getElementsByClassName('inner-louver')
-	container[0].setAttribute('style', 'background-image:url(656748d6862708930154d37c44bb355e.jpg)')
-})
+class LouverO {
+  constructor(louverInSidebar, selectLouver, container) {
+    this.louverInSidebar = louverInSidebar;
+    this.selectLouver = selectLouver;
+    this.container = container;
+  }
 
-let louver2 = document.getElementById('louver-close')
+  louverOpen() {
+    return () => {
+      this.louverInSidebar.style.color = "gold";
 
-louver2.addEventListener('click', () => {
-	let pInHeader = document.getElementsByClassName('p-inHeader')
-	for (let i = 0; i < pInHeader.length; i++) {
-		pInHeader[i].style.color = 'grey'
-	}
-	let louverInSidebar = document.getElementById('louver-inSidebar')
-	louverInSidebar.style.color = '#A9A9A9';
-	let selectLouver = document.getElementsByClassName('select-css')
-	selectLouver[1].value = 'Закриті';
-	let containe = document.getElementsByClassName('inner-louver')
-	containe[0].setAttribute('style', 'background-image:url(closed-aluminium-roller-blinds-background_172990-74.jpg)')
-})
+      this.selectLouver[1].value = "Відкриті";
 
-let selectLouver = document.getElementsByClassName('select-css')
-selectLouver[1].addEventListener('change',function () {
-			if (selectLouver[1].options[selectLouver[1].selectedIndex].value == "Відкриті") {
-				let pInHeader = document.getElementsByClassName('p-inHeader')
-				for (let i = 0; i < pInHeader.length; i++) {
-					pInHeader[i].style.color = 'gold'
-				}
-				let louverInSidebar = document.getElementById('louver-inSidebar')
-				louverInSidebar.style.color = 'gold';
-				let selectLouver = document.getElementsByClassName('select-css')
-				selectLouver[1].value = 'Відкриті';
-				let container = document.getElementsByClassName('inner-louver')
-				container[0].setAttribute('style', 'background-image:url(656748d6862708930154d37c44bb355e.jpg)')
-			} else if (selectLouver[1].options[selectLouver[1].selectedIndex].value == "Закриті") {
-				let pInHeader = document.getElementsByClassName('p-inHeader')
-				for (let i = 0; i < pInHeader.length; i++) {
-					pInHeader[i].style.color = 'grey'
-				}
-				let louverInSidebar = document.getElementById('louver-inSidebar')
-				louverInSidebar.style.color = '#A9A9A9';
-				let selectLouver = document.getElementsByClassName('select-css')
-				selectLouver[1].value = 'Закриті';
-				let containe = document.getElementsByClassName('inner-louver')
-				containe[0].setAttribute('style', 'background-image:url(closed-aluminium-roller-blinds-background_172990-74.jpg)')
-			}
+      this.container[0].setAttribute(
+        "style",
+        "background-image:url(656748d6862708930154d37c44bb355e.jpg)"
+      );
+    };
+  }
+}
+let louverInSidebarss = document.getElementById("louver-inSidebar");
+let selectLouverss = document.getElementsByClassName("select-css");
+let containerss = document.getElementsByClassName("inner-louver");
+let louverO = new LouverO(louverInSidebarss, selectLouverss, containerss);
+
+let louver = document.getElementById("louver-open");
+
+louver.addEventListener("click", louverO.louverOpen());
+
+
+
+class LouverC {
+  constructor(louverInSidebar, selectLouver, container) {
+    this.louverInSidebar = louverInSidebar;
+    this.selectLouver = selectLouver;
+    this.container = container;
+  }
+
+  louverClose() {
+    return () => {
+      this.louverInSidebar.style.color = "#A9A9A9";
+
+      this.selectLouver[1].value = "Закриті";
+
+      this.container[0].setAttribute(
+        "style",
+        "background-image:url(closed-aluminium-roller-blinds-background_172990-74.jpg)"
+      );
+    };
+  }
+}
+let louverInSidebarS = document.getElementById("louver-inSidebar");
+let selectLouverS = document.getElementsByClassName("select-css");
+let containerS = document.getElementsByClassName("inner-louver");
+let louverC = new LouverC(louverInSidebarS, selectLouverS, containerS);
+
+let louverClose = document.getElementById("louver-close");
+
+louverClose.addEventListener("click", louverC.louverClose());
+
+
+
+// selectLouver in sidebar close-open
+
+let selectLouver = document.getElementsByClassName("select-css");
+selectLouver[1].addEventListener(
+  "change",
+  function () {
+    if (
+      selectLouver[1].options[selectLouver[1].selectedIndex].value == "Відкриті"
+    ) {
+      let pInHeader = document.getElementsByClassName("p-inHeader");
+      for (let i = 0; i < pInHeader.length; i++) {
+        pInHeader[i].style.color = "gold";
+      }
+      let louverInSidebar = document.getElementById("louver-inSidebar");
+      louverInSidebar.style.color = "gold";
+      let selectLouver = document.getElementsByClassName("select-css");
+      selectLouver[1].value = "Відкриті";
+      let container = document.getElementsByClassName("inner-louver");
+      container[0].setAttribute(
+        "style",
+        "background-image:url(656748d6862708930154d37c44bb355e.jpg)"
+      );
+    } else if (
+      selectLouver[1].options[selectLouver[1].selectedIndex].value == "Закриті"
+    ) {
+      let pInHeader = document.getElementsByClassName("p-inHeader");
+      for (let i = 0; i < pInHeader.length; i++) {
+        pInHeader[i].style.color = "grey";
+      }
+      let louverInSidebar = document.getElementById("louver-inSidebar");
+      louverInSidebar.style.color = "#A9A9A9";
+      let selectLouver = document.getElementsByClassName("select-css");
+      selectLouver[1].value = "Закриті";
+      let containe = document.getElementsByClassName("inner-louver");
+      containe[0].setAttribute(
+        "style",
+        "background-image:url(closed-aluminium-roller-blinds-background_172990-74.jpg)"
+      );
+    }
   },
-  false)
+  false
+);
 
 //signaling-on and off
+
+
 let signalingOn = document.getElementById('signaling-on')
 
 signalingOn.addEventListener('click',() => {
@@ -152,132 +215,221 @@ signalingOn.addEventListener('click',() => {
 	 let signalingInSidebar = document.getElementById('signaling-inSidebar')
  	signalingInSidebar.style.color = '#A9A9A9';
 	clearInterval(backgroundInterval)
-	$div2blink.style.background = '#666666'
  })
 })
 
+// selectSignaling in sidebar on-off
 
-let selectSignaling = document.getElementsByClassName('select-css')
-selectSignaling[2].addEventListener('change',function () {
-		let backgroundInterval;
-			if (selectSignaling[2].options[selectSignaling[2].selectedIndex].value == "Включена") {
-				let pInHeader = document.getElementsByClassName('p-inHeader')
-				for (let i = 0; i < pInHeader.length; i++) {
-					pInHeader[i].style.color = 'red'
-				}
-				let signalingInSidebar = document.getElementById('signaling-inSidebar')
-				signalingInSidebar.style.color = 'red';
-				let $div2blink = $("#divtoBlink")
-				 backgroundInterval = setInterval(function(){
-			    $div2blink.toggleClass("backgroundRed");
-			 },900)
-			 selectSignaling[2].addEventListener('change',function () {
-				 	if (selectSignaling[2].options[selectSignaling[2].selectedIndex].value == "Виключена") {
-						let pInHeader = document.getElementsByClassName('p-inHeader')
-						for (let i = 0; i < pInHeader.length; i++) {
-							pInHeader[i].style.color = 'grey'
-						}
-							signalingInSidebar.style.color = '#A9A9A9';
-							clearInterval(backgroundInterval)
-					 }
-			 },false)
-  }
-},
-  false)
+let selectSignaling = document.getElementsByClassName("select-css");
+selectSignaling[2].addEventListener(
+  "change",
+  function () {
+    let backgroundInterval;
+    if (
+      selectSignaling[2].options[selectSignaling[2].selectedIndex].value ==
+      "Включена"
+    ) {
+      let pInHeader = document.getElementsByClassName("p-inHeader");
+      for (let i = 0; i < pInHeader.length; i++) {
+        pInHeader[i].style.color = "red";
+      }
+      let signalingInSidebar = document.getElementById("signaling-inSidebar");
+      signalingInSidebar.style.color = "red";
+      let $div2blink = $("#divtoBlink");
+      backgroundInterval = setInterval(function () {
+        $div2blink.toggleClass("backgroundRed");
+      }, 900);
+      selectSignaling[2].addEventListener(
+        "change",
+        function () {
+          if (
+            selectSignaling[2].options[selectSignaling[2].selectedIndex]
+              .value == "Виключена"
+          ) {
+            let pInHeader = document.getElementsByClassName("p-inHeader");
+            for (let i = 0; i < pInHeader.length; i++) {
+              pInHeader[i].style.color = "grey";
+            }
+            signalingInSidebar.style.color = "#A9A9A9";
+            clearInterval(backgroundInterval);
+          }
+        },
+        false
+      );
+    }
+  },
+  false
+);
 
 
 // TV on-off
-let tvOn = document.getElementById('TV-on')
 
-tvOn.addEventListener('click',() => {
-	let p = document.getElementById("p");
-	p.style.display = 'block';
-	p.style.color = '#284bfa';
-	let div = document.getElementById('tv')
-	div.setAttribute('style','color: blue;')
-	let selectTv = document.getElementsByClassName('select-css')
-	selectTv[3].value = 'Включений';
-	let tvInSidebar = document.getElementById('tv-inSidebar')
-	tvInSidebar.style.color = 'blue';
-	let container = document.getElementsByClassName('additionall-component')
-	container[0].setAttribute('style', 'background-image:url(SMPTE_Color_Bars.svg.png)')
-})
+class TvOn {
+  constructor(p, div, selectTv, tvInSidebar, container) {
+    this.p = p;
+    this.div = div;
+    this.selectTv = selectTv;
+    this.tvInSidebar = tvInSidebar;
+    this.container = container;
+  }
 
-let tvOff = document.getElementById('TV-off')
+  tvOn() {
+    return () => {
+      this.p.style.display = "block";
+      this.p.style.color = "#284bfa";
+      this.div.setAttribute("style", "color: blue;");
+      this.selectTv[3].value = "Включений";
+      this.tvInSidebar.style.color = "blue";
+      this.container[0].setAttribute(
+        "style",
+        "background-image:url(SMPTE_Color_Bars.svg.png)"
+      );
+    };
+  }
+}
+let pTv = document.getElementById("p");
+let divTv = document.getElementById("tv");
+let selectTv = document.getElementsByClassName("select-css");
+let tvInSidebarTv = document.getElementById("tv-inSidebar");
+let containerTv = document.getElementsByClassName("additionall-component");
+let tvOnInst = new TvOn(pTv, divTv, selectTv, tvInSidebarTv, containerTv);
 
-tvOff.addEventListener('click',() => {
-	let p = document.getElementById("p");
-	p.style.display = 'none';
-	let div = document.getElementById('tv')
-	div.setAttribute('style','color:#A9A9A9;')
-	let selectTv = document.getElementsByClassName('select-css')
-	selectTv[3].value = 'Виключений';
-	let tvInSidebar = document.getElementById('tv-inSidebar')
-	tvInSidebar.style.color = '#A9A9A9';
-	let container = document.getElementsByClassName('additionall-component')
-	container[0].setAttribute('style', 'background:black')
-})
+let tvOn = document.getElementById("TV-on");
 
-let selectTV = document.getElementsByClassName('select-css');
+tvOn.addEventListener("click", tvOnInst.tvOn());
+
+
+
+class TvOff {
+  constructor(p, div, selectTv, tvInSidebar, container) {
+    this.p = p;
+    this.div = div;
+    this.selectTv = selectTv;
+    this.tvInSidebar = tvInSidebar;
+    this.container = container;
+  }
+
+  tvOff() {
+    return () => {
+      this.p.style.display = "none";
+      this.div.setAttribute("style", "color:#A9A9A9;");
+      this.selectTv[3].value = "Виключений";
+      this.tvInSidebar.style.color = "#A9A9A9";
+      this.container[0].setAttribute("style", "background:black");
+    };
+  }
+}
+let pTvf = document.getElementById("p");
+let divTvf = document.getElementById("tv");
+let selectTvf = document.getElementsByClassName("select-css");
+let tvInSidebarTvf = document.getElementById("tv-inSidebar");
+let containerTvf = document.getElementsByClassName("additionall-component");
+let tvOffInst = new TvOff(
+  pTvf,
+  divTvf,
+  selectTvf,
+  tvInSidebarTvf,
+  containerTvf
+);
+
+let tvOff = document.getElementById("TV-off");
+
+tvOff.addEventListener("click", tvOffInst.tvOff());
+
+
+
+// selectTv in sidebar off-on
+
+let selectTV = document.getElementsByClassName("select-css");
 
 if (selectTV[3].options[selectTV[3].selectedIndex].value == "Виключений") {
-	let p = document.getElementById("p");
-	p.style.display = 'none';
+  let p = document.getElementById("p");
+  p.style.display = "none";
 }
 
-selectTV[3].addEventListener('change',function () {
-	if (selectTV[3].options[selectTV[3].selectedIndex].value == "Включений") {
-		let p = document.getElementById("p");
-		p.style.display = 'block';
-		let div = document.getElementById('tv')
-		div.setAttribute('style','color: blue;')
-		let tvInSidebar = document.getElementById('tv-inSidebar')
-		tvInSidebar.style.color = 'blue';
-		let container = document.getElementsByClassName('additionall-component')
-		container[0].setAttribute('style', 'background-image:url(SMPTE_Color_Bars.svg.png)')
-	} else if (selectTV[3].options[selectTV[3].selectedIndex].value == "Виключений") {
-		let p = document.getElementById("p");
-		p.style.display = 'none';
-		let div = document.getElementById('tv');
-		div.setAttribute('style','color:#A9A9A9;');
-		let tvInSidebar = document.getElementById('tv-inSidebar');
-		tvInSidebar.style.color = '#A9A9A9';
-		let container = document.getElementsByClassName('additionall-component');
-		container[0].setAttribute('style', 'background:black');
-	 }
-},false);
+selectTV[3].addEventListener(
+  "change",
+  function () {
+    if (selectTV[3].options[selectTV[3].selectedIndex].value == "Включений") {
+      let p = document.getElementById("p");
+      p.style.display = "block";
+      let div = document.getElementById("tv");
+      div.setAttribute("style", "color: blue;");
+      let tvInSidebar = document.getElementById("tv-inSidebar");
+      tvInSidebar.style.color = "blue";
+      let container = document.getElementsByClassName("additionall-component");
+      container[0].setAttribute(
+        "style",
+        "background-image:url(SMPTE_Color_Bars.svg.png)"
+      );
+    } else if (
+      selectTV[3].options[selectTV[3].selectedIndex].value == "Виключений"
+    ) {
+      let p = document.getElementById("p");
+      p.style.display = "none";
+      let div = document.getElementById("tv");
+      div.setAttribute("style", "color:#A9A9A9;");
+      let tvInSidebar = document.getElementById("tv-inSidebar");
+      tvInSidebar.style.color = "#A9A9A9";
+      let container = document.getElementsByClassName("additionall-component");
+      container[0].setAttribute("style", "background:black");
+    }
+  },
+  false
+);
 
+
+
+//  selectOfChannel in tv block change
 
 let selectOfChannel = document.getElementById("channel");
 
-selectOfChannel.addEventListener('change',function () {
-	let p = document.getElementById("p");
-	if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "int") {
-		p.innerHTML = `${
+selectOfChannel.addEventListener(
+  "change",
+  function () {
+    let p = document.getElementById("p");
+    if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "int") {
+      p.innerHTML = `${
         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
       }`;
-	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "nv") {
-		 p.innerHTML = `${
-         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
-       }`;
-	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "onepls") {
-		 p.innerHTML = `${
-         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
-       }`;
-	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "tet") {
-		 p.innerHTML = `${
-         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
-       }`;
-	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "ukr") {
-		 p.innerHTML = `${
-         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
-       }`;
-	 } else if (selectOfChannel.options[selectOfChannel.selectedIndex].value == "choose") {
-		 p.innerHTML = `${
-         selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
-       }`;
-	 }
-},false)
+    } else if (
+      selectOfChannel.options[selectOfChannel.selectedIndex].value == "nv"
+    ) {
+      p.innerHTML = `${
+        selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+      }`;
+    } else if (
+      selectOfChannel.options[selectOfChannel.selectedIndex].value == "onepls"
+    ) {
+      p.innerHTML = `${
+        selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+      }`;
+    } else if (
+      selectOfChannel.options[selectOfChannel.selectedIndex].value == "tet"
+    ) {
+      p.innerHTML = `${
+        selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+      }`;
+    } else if (
+      selectOfChannel.options[selectOfChannel.selectedIndex].value == "ukr"
+    ) {
+      p.innerHTML = `${
+        selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+      }`;
+    } else if (
+      selectOfChannel.options[selectOfChannel.selectedIndex].value == "choose"
+    ) {
+      p.innerHTML = `${
+        selectOfChannel.options[selectOfChannel.selectedIndex].innerHTML
+      }`;
+    }
+  },
+  false
+);
+
+
+
+// butDeleteElm delete elem from page
 
 
 let butDeleteElm = document.getElementById('delete-elm');
@@ -302,6 +454,10 @@ butDeleteElm.addEventListener('click',() => {
 	}
 })
 
+
+// butAddElm add elm on page
+
+
 let butAddElm = document.getElementById('add-elm')
 
 butAddElm.addEventListener('click',() => {
@@ -310,7 +466,7 @@ butAddElm.addEventListener('click',() => {
 	let selectSide = document.getElementsByClassName('select-css')
 	let str = `  <div class="inner-newComponent">
 				<div class="container20">
-					<button id="signaling-on">Включити</button>
+					<button id="newComp-on">Включити</button>
 				</div>
 
 
@@ -319,7 +475,7 @@ butAddElm.addEventListener('click',() => {
 					</div>
 
 					<div class="container20">
-						<button id="signaling-off">Виключити</button>
+						<button id="newComp-off">Виключити</button>
 					</div>
 		</div>`
 let str2 = `<div id="newComponent-inSidebar">
@@ -333,4 +489,33 @@ let str2 = `<div id="newComponent-inSidebar">
 </select>`
 		selectSide[3].insertAdjacentHTML('afterend',`${str2}`)
 		divTv[0].insertAdjacentHTML('afterend',`${str}`)
+		let newCompOn = document.getElementById('newComp-on')
+
+		newCompOn.addEventListener('click',() => {
+			let h = document.getElementById('newComp')
+			h.style.color = 'orange'
+			let selectNewComp = document.getElementsByClassName('select-css')
+			selectNewComp[4].value = 'Включений';
+		})
+
+		let newCompOff = document.getElementById('newComp-off')
+
+		newCompOff.addEventListener('click',() => {
+			let h = document.getElementById('newComp');
+			h.style.color = '#A9A9A9';
+			let selectNewComp = document.getElementsByClassName('select-css')
+			selectNewComp[4].value = 'Виключений';
+		})
+
+		let selectNewComponent = document.getElementsByClassName('select-css')
+
+		selectNewComponent[4].addEventListener('change',function () {
+				if (selectNewComponent[4].options[selectNewComponent[4].selectedIndex].value == "Включений") {
+					let h = document.getElementById('newComp')
+					h.style.color = 'orange'
+				} else if (selectNewComponent[4].options[selectNewComponent[4].selectedIndex].value == "Виключений") {
+					let h = document.getElementById('newComp');
+					h.style.color = '#A9A9A9';
+				}
+		},false)
 })
