@@ -6,6 +6,7 @@ $('select').change(function(){
 });
 
 
+// Light on off
 
 let checkbox = document.getElementById('on');
 
@@ -450,7 +451,13 @@ butDeleteElm.addEventListener('click',() => {
 		let tv = document.getElementsByClassName('additionall-component');
 		tv[0].style.display = 'none';
 	} else {
-		alert("ne sus")
+		alert("Такого елементу не існує або він введений з маленької букви")
+		alert(`Список елементів
+Світло
+Сигналізація
+Жалюзі
+Телевізор
+Введіть будь ласка один з цих елементів(з великої букви)`)
 	}
 })
 
